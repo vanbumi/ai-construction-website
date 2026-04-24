@@ -1,4 +1,5 @@
-// app/page.tsx - VERSI MARKETING LENGKAP
+// app/page.tsx - VERSI DENGAN HERO BACKGROUND IMAGE
+import Image from "next/image";
 import InquiryForm from "@/components/InquiryForm";
 import SolutionCard from "@/components/SolutionCard";
 import { 
@@ -53,10 +54,23 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-white">
-      {/* Hero Section - Lebih Kuat */}
-      <section className="relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white">
-        <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-5"></div>
-        <div className="relative container mx-auto px-4 py-20 md:py-32">
+      {/* Hero Section - Dengan Background Image */}
+      <section className="relative text-white">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/hero-ai-cons.png"
+            alt="AI Construction Solutions - Otomasi Proyek Konstruksi"
+            fill
+            className="object-cover"
+            priority
+          />
+          {/* Overlay gelap agar teks mudah dibaca */}
+          <div className="absolute inset-0 bg-black/60 z-10"></div>
+        </div>
+        
+        {/* Konten Hero */}
+        <div className="relative z-20 container mx-auto px-4 py-20 md:py-32">
           <div className="max-w-4xl mx-auto text-center">
             <div className="inline-block bg-emerald-500/20 text-emerald-400 px-4 py-1.5 rounded-full text-sm font-medium mb-6 backdrop-blur-sm">
               🚀 Untuk Kontraktor Skala Menengah & Besar di Indonesia
@@ -65,16 +79,16 @@ export default function Home() {
               Otomasi Aliran Data & Dokumen
               <span className="text-emerald-400 block mt-2">Proyek Konstruksi Anda</span>
             </h1>
-            <p className="text-lg md:text-xl text-slate-300 mb-8 leading-relaxed max-w-3xl mx-auto">
+            <p className="text-lg md:text-xl text-slate-200 mb-8 leading-relaxed max-w-3xl mx-auto">
               Pangkas waktu estimasi RAB dari 3 hari menjadi 15 menit. 
               Deteksi risiko kontrak otomatis. Pantau progres lapangan tanpa keliling.
-              <span className="block text-emerald-400 mt-2 font-medium">Gratis demo dengan data proyek Anda sendiri.</span>
+              <span className="block text-emerald-300 mt-2 font-medium">Gratis demo dengan data proyek Anda sendiri.</span>
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a href="#inquiry" className="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-8 py-4 rounded-lg transition text-center text-lg">
                 Minta Demo Gratis →
               </a>
-              <a href="#solutions" className="border border-slate-600 hover:bg-slate-800 text-white font-semibold px-8 py-4 rounded-lg transition text-center text-lg">
+              <a href="#solutions" className="border border-slate-400 hover:bg-white/10 text-white font-semibold px-8 py-4 rounded-lg transition text-center text-lg">
                 Lihat 4 Solusi AI
               </a>
             </div>
@@ -203,7 +217,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FAQ Section - Tambahan untuk konversi */}
+      {/* FAQ Section */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4 max-w-4xl">
           <h2 className="text-2xl md:text-3xl font-bold text-slate-900 text-center mb-10">
@@ -220,7 +234,7 @@ export default function Home() {
             </div>
             <div className="border-b pb-4">
               <h3 className="font-bold text-slate-900 mb-2">Berapa biaya implementasinya?</h3>
-              <p className="text-slate-600">Mulai dari Rp XXX.XXX/bulan per modul. Hubungi kami untuk quote sesuai skala proyek Anda.</p>
+              <p className="text-slate-600">Mulai dari Rp 2.500.000/bulan per modul. Hubungi kami untuk quote sesuai skala proyek Anda.</p>
             </div>
             <div className="pb-4">
               <h3 className="font-bold text-slate-900 mb-2">Apakah tim kami perlu pelatihan khusus?</h3>
