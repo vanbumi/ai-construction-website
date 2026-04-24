@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    unoptimized: true, // untuk deployment static
+    unoptimized: true, // Untuk deployment static
   },
   output: 'standalone',
 }
