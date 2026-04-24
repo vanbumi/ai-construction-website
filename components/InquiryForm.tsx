@@ -2,7 +2,10 @@
 import { useState } from "react";
 
 // ⚠️ GANTI DENGAN URL APPS SCRIPT ANDA NANTI
-const GOOGLE_SHEETS_WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbz81BYFooQW-q7i_UEn3prX2vSPDsX5GFmHXxJgKvWYzV_dZIpe0GpNgyJmBPCeH4Jg/exec";
+// const GOOGLE_SHEETS_WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbz81BYFooQW-q7i_UEn3prX2vSPDsX5GFmHXxJgKvWYzV_dZIpe0GpNgyJmBPCeH4Jg/exec";
+
+// Ambil dari environment variable
+const GOOGLE_SHEETS_WEBHOOK_URL = process.env.NEXT_PUBLIC_GOOGLE_SHEETS_URL || "";
 
 export default function InquiryForm() {
   const [formData, setFormData] = useState({
